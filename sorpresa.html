@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title> Goldis 💖</title>
+
+    <!-- Fuente cursiva -->
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;700&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Dancing Script', cursive;
+            overflow: hidden;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 30px;
+            max-width: 500px;
+            text-align: center;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.25);
+            animation: aparecer 1.5s ease;
+        }
+
+        h1 {
+            font-size: 42px;
+            color: #c9184a;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 22px;
+            color: #5a1a2f;
+            line-height: 1.6;
+            margin-bottom: 18px;
+        }
+
+        .firma {
+            margin-top: 25px;
+            font-size: 26px;
+            color: #a4133c;
+        }
+
+        .volver {
+            margin-top: 30px;
+            padding: 12px 30px;
+            font-family: 'Dancing Script', cursive;
+            font-size: 20px;
+            border: none;
+            border-radius: 25px;
+            background: #ff4d6d;
+            color: white;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .volver:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes aparecer {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
+        }
+
+        /* Corazones flotando */
+        .heart {
+            position: absolute;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 20px;
+            animation: flotar 6s linear infinite;
+        }
+
+        @keyframes flotar {
+            0% {
+                transform: translateY(100vh) scale(0.8);
+                opacity: 0;
+            }
+            20% { opacity: 1; }
+            100% {
+                transform: translateY(-10vh) scale(1.2);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Tarjeta -->
+    <div class="card">
+        <h1>💌 Feliz cumpleaños amiguita 💌</h1>
+
+        <p>
+            Eres la persona con la que siempre quiero bailar
+            tkm goldis
+        </p>
+
+        <p>
+            compertir el escenario contigo fue y siempre
+sera la mejor experiencia del mundo, más cuando estabamos risa a risa
+        </p>
+
+        <p>
+            Ojala un dia volver a molestar a tu lado  
+            me alegra verte siempre feliz bailando
+            siempre te decepciono pero este bruto tkm
+            pasa lindo dia con las personas q te aman.
+        </p>
+
+        <p>
+            💖 tienes un brillo unico 💖
+        </p>
+
+        <div class="firma">
+            Con cariño, <br>
+            Nunca dejes de bailar💕
+        </div>
+
+        <button class="volver" onclick="volver()">Volver</button>
+    </div>
+    <button class=¨volver¨ onclick=¨playMusic()¨>
+reproducir musica    </button>
+
+
+    <!-- Música -->
+    <audio id="music" loop>
+        <source src="T.mp3" type="audio/mpeg">
+    </audio>
+
+    <script>
+        // Música al primer click
+        document.body.addEventListener("click", () => {
+            document.getElementById("music").play();
+        }, { once: true });
+
+        function volver() {
+            window.location.href = "index.html";
+        }
+
+        // Crear corazones flotando
+        function crearCorazon() {
+            const heart = document.createElement("div");
+            heart.className = "heart";
+            heart.innerText = "❤️";
+            heart.style.left = Math.random() * 100 + "vw";
+            heart.style.fontSize = (15 + Math.random() * 25) + "px";
+            heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+            document.body.appendChild(heart);
+
+            setTimeout(() => {
+                heart.remove();
+            }, 7000);
+        }
+
+        setInterval(crearCorazon, 400);
+    </script>
+
+</body>
+</html>

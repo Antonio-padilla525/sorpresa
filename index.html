@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>felicidades💖</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffb6c1, #ffe4e1);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Georgia', serif;
+            text-align: center;
+        }
+
+        .card {
+            background: #fff0f5;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 400px;
+        }
+
+        h1 {
+            color: #c9184a;
+            margin-bottom: 15px;
+        }
+
+        p {
+            color: #6d6875;
+            font-size: 16px;
+        }
+
+        .heart {
+            font-size: 60px;
+            cursor: pointer;
+            margin-top: 20px;
+            animation: latido 1s infinite;
+        }
+
+        @keyframes latido {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+            100% { transform: scale(1); }
+        }
+
+        .hint {
+            font-size: 12px;
+            color: #999;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <h1> alegrate en tu dia 💘</h1>
+        <p>
+           solo cumples 16 una vez, siempre con tu voz de camionero
+           y tu carisma de perro rabioso, te quiero, pero lejos, no vaya
+           a ser q se me pegue la rabia
+        </p>
+
+        <!-- CORAZÓN -->
+        <div class="heart" onclick="irSorpresa()">❤️</div>
+        <div class="hint">(Toca el corazón)</div>
+    </div>
+
+    <script>
+        function irSorpresa() {
+            window.location.href = "otro/sorpresa.html";
+        }
+    </script>
+
+</body>
+</html>
